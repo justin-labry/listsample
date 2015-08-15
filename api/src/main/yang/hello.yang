@@ -1,0 +1,31 @@
+module hello {
+    yang-version 1;
+    namespace "urn:opendaylight:params:xml:ns:yang:hello";
+    prefix "hello";
+
+    revision "2015-01-05" {
+        description "Initial revision of hello model";
+    }
+    
+    container device-info {
+  		leaf name {
+    	type string;
+    	config false;
+  		}
+
+  		leaf description {
+    		type string;
+    		config false;
+  		}
+
+  		list node {
+     		key "id";
+      		leaf id {
+    	      type string;
+      		}
+      		leaf description {
+          		type string;
+      		}
+  		}
+	} /* End container */
+}
